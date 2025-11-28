@@ -79,6 +79,23 @@ Everything needed to **verify or refute the theory** is contained locally — no
 
 ---
 
+Implementation is intentionally minimal
+
+This version of the algorithm is written for clarity, not performance.
+
+It shows the core mechanism of additive growth and multiplicative reconstruction as transparently as possible — without optimizations that would hide the structure.
+
+Anyone is warmly invited to:
+	•	optimize the implementation
+	•	experiment with alternative data structures
+	•	parallelize the reconstruction logic
+	•	extend the visualization
+
+Any improvement that preserves mathematical transparency is welcome.
+Pull requests that explore new ideas are appreciated.
+
+---
+
 ## How to run
 
 ```bash
