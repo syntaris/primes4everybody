@@ -94,30 +94,6 @@ Anyone is warmly invited to:
 Any improvement that preserves mathematical transparency is welcome.
 Pull requests that explore new ideas are appreciated.
 
----
-
-## How to run
-
-```bash
-pip install -r requirements.txt
-python p4e.py
-
-Output:
-	•	full number growth
-	•	multiplicative coverage waves
-	•	prime detection — without sieving and without division
-
-⸻
-
-Visualization (optional)
-
-python visualize.py
-
-Produces plots for:
-	•	growth density vs. interference
-	•	prime gap damping
-	•	Riemann-like oscillations from the growth model
-
 ⸻
 
 Scientific falsifiability
@@ -188,3 +164,27 @@ Open science moves faster when shared.
 License
 
 MIT — maximum openness for research and education.
+
+---
+
+## How to run
+
+```bash
+pip install -r requirements.txt
+python p4e.py
+
+Output:
+	•	full number growth
+	•	multiplicative coverage waves
+	•	prime detection — without sieving and without division
+
+⸻
+
+Visualization (optional)
+
+python visualize.py
+
+Produces plots for:
+	•	growth density vs. interference
+	•	prime gap damping
+	•	Riemann-like oscillations from the growth model
