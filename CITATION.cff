@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+title: "primes4everybody (p4e)"
+message: "If you use this repository in research or teaching, please cite it using the information below."
+type: software
+
+authors:
+  - family-names: "Heinz"
+    given-names: "Karl Jochen"
+    orcid: "0009-0003-9322-4432"
+
+repository-code: "https://github.com/<USERNAME>/primes4everybody"
+abstract: >
+  A constructive implementation of a new perspective on the prime distribution:
+  prime numbers arise as necessary growth positions of the additive number
+  space when reconstructed multiplicatively. This repository provides a
+  minimal, reproducible and falsifiable demonstration of the mechanism.
+
+keywords:
+  - prime numbers
+  - number theory
+  - constructive mathematics
+  - multiplicative reconstruction
+  - prime distribution
+  - p4e
+
+license: "MIT"
+
+references:
+  - type: article
+    title: "The Irreducible Structure of the Prime Distribution"
+    authors:
+      - family-names: "Heinz"
+        given-names: "Karl Jochen"
+    repository: "https://zenodo.org/records/17649211"
+    note: "Full formal derivation and theoretical proof"
