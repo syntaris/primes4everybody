@@ -61,21 +61,21 @@ This is why π(n) slows down — *not* because primes “run out”, but because
 
 ## Structure of this repository
 
-"""
-/  
-├── p4e.py  
-├── visualize.py  
-├── requirements.txt  
-├── README.md  
+```
+/
+├── p4e.py
+├── visualize.py
+├── requirements.txt
+├── README.md
 │
-├── docs/  
-│   └── primes4everybody-DE.pdf
-│   └── primes4everybody-EN.pdf  
+├── docs/
+│   ├── primes4everybody-DE.pdf
+│   ├── primes4everybody-EN.pdf
 │   └── multiplicative_reconstruction_waves.png
 │
-└── theory/  
+└── theory/
     └── The_Irreducible_Structure_of_the_Prime_Distribution.pdf
-"""
+```
 
 Everything needed to **verify or refute the theory** is contained locally — no external references required.
 
