@@ -85,6 +85,8 @@ This version of the algorithm is written for clarity, not performance.
 
 It shows the core mechanism of additive growth and multiplicative reconstruction as transparently as possible — without optimizations that would hide the structure.
 
+Counter-intuitively, the constructive model becomes increasingly efficient at very large scales, because multiplicative coverage dominates and fewer numbers remain to be inspected individually.
+
 Anyone is warmly invited to:
 	•	optimize the implementation
 	•	experiment with alternative data structures
