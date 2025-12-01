@@ -33,6 +33,10 @@ This removes the conceptual mystery around primes *without* using sieving, facto
 ## Key idea in one line
 > Primes appear exactly at the positions where multiplicative coverage fails to occupy the next additive step.
 
+Unlike all classical approaches, primality is not determined by performing any computation *on* x.
+Whether x is prime is already decided by the global multiplicative state *before* x is reached:
+if x has not been covered by previous multiplicative waves, x is prime — without ever “touching” x itself.
+
 ---
 
 ## Visual structure of the prime distribution
