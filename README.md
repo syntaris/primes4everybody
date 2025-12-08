@@ -88,12 +88,7 @@ It is *not* optimized for performance — by design.
 ---
 
 ## 2. Advanced Go implementation  
-### MCG — Multiplicative Coverage Generator  
-Located in:
-
-```
-/advanced/mcg.go
-```
+### MCG - Multiplicative Coverage Generator  
 
 The MCG is a **full structural generator** of the theory:
 
@@ -129,7 +124,7 @@ The MCG is a **full structural generator** of the theory:
 ### Run the MCG
 
 ```bash
-go run advanced/mcg.go
+go run Multiplicative-Coverage-Generator.go
 ```
 
 This prints the first 10,000 primes using the unbounded constructive generator.
