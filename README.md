@@ -1,13 +1,13 @@
 # primes4everybody (p4e)
 ### A constructive model of the number space — Prime numbers as *growth positions*, not anomalies
 
-**primes4everybody (p4e)** implements a fully transparent and minimal demonstration of a new perspective on prime numbers:
+**primes4everybody (p4e)** implements a fully transparent and reproducible model of the prime distribution:
 
-> The number space is not a static infinite object.
-> It grows additively — and is reconstructed multiplicatively.
+> The number space is not a static infinite object.  
+> It grows additively — and is reconstructed multiplicatively.  
 > Prime numbers are the positions where multiplicative reconstruction cannot keep pace with additive growth.
 
-This repository allows anyone to **reproduce, visualize, verify or falsify** the theory — without needing advanced mathematics.
+This repository allows anyone to **reproduce, verify or falsify** the theory — without needing advanced mathematics.
 
 ---
 
@@ -26,173 +26,161 @@ The core mechanism:
 > Multiplicative reconstruction is incomplete and generates interference.  
 > The **gaps of this interference correspond exactly to prime numbers**.
 
-This removes the conceptual mystery around primes *without* using sieving, factorization, modular arithmetic or probability.
+This removes the conceptual mystery around primes *without* using sieving, factorization, modular arithmetic, or probability.
 
 ---
 
 ## Key idea in one line
 > Primes appear exactly at the positions where multiplicative coverage fails to occupy the next additive step.
 
-Unlike all classical approaches, primality is not determined by performing any computation *on* x.
-Whether x is prime is already decided by the global multiplicative state *before* x is reached:
-if x has not been covered by previous multiplicative waves, x is prime — without ever “touching” x itself.
+Unlike classical approaches, primality is not determined by performing any computation *on* x.  
+Whether x is prime is already decided by the global multiplicative state *before* x is reached.
 
 ---
 
 ## Visual structure of the prime distribution
 
-The following plot is the core visual result of the model.
+Each row represents a prime **emitter** (multiplicative coverage).  
+Each column represents the **additive growth** of the number space.  
+Black gaps between coverage waves correspond exactly to the primes.
 
-Each row represents a prime **emitter** (multiplicative coverage),
-each column represents the **additive growth** of the number space.
-Black gaps between the coverage waves are exactly the positions of the prime numbers.
-
-![multiplicative reconstruction waves](docs/multiplicative_reconstruction_waves.png)
-
-This picture is important because it shows **the cause of primes, not only their statistical effects**.
-It makes the growth mechanism *visible*, *reproducible* and *falsifiable*.
+(See multiplicative_reconstruction_waves.png)
 
 ---
 
 ## Why primes become rarer
+
 Growth density increases.  
 Multiplicative coverage increases.  
 Remaining gaps become narrower — but never disappear.
 
-This is why π(n) slows down — *not* because primes “run out”, but because reconstruction pressure increases.
+This explains why π(n) slows down:  
+not because primes "run out", but because **reconstruction pressure rises**.
 
 ---
 
-## Structure of this repository
+# Two complementary implementations
 
-```
-/
-├── p4e.py
-├── visualize.py
-├── requirements.txt
-├── README.md
-│
-├── docs/
-│   ├── primes4everybody-DE.pdf
-│   ├── primes4everybody-EN.pdf
-│   └── multiplicative_reconstruction_waves.png
-│
-└── theory/
-    └── The_Irreducible_Structure_of_the_Prime_Distribution.pdf
-```
-
-Everything needed to **verify or refute the theory** is contained locally — no external references required.
+The repository contains **two implementations**, serving different purposes.
 
 ---
 
-Implementation is intentionally minimal
+## 1. Minimal Python implementation (p4e.py)
 
-This version of the algorithm is written for clarity, not performance.
+This version is **intentionally minimal**.
 
-It shows the core mechanism of additive growth and multiplicative reconstruction as transparently as possible — without optimizations that would hide the structure.
+It implements the constructive mechanism in the simplest possible form:
 
-Counter-intuitively, the constructive model becomes increasingly efficient at very large scales, because multiplicative coverage dominates and fewer numbers remain to be inspected individually.
+- additive growth  
+- multiplicative reconstruction using local emitters  
+- emergence of primes when coverage fails  
 
-Anyone is warmly invited to:
-	•	optimize the implementation
-	•	experiment with alternative data structures
-	•	parallelize the reconstruction logic
-	•	extend the visualization
+Its purpose is:
 
-Any improvement that preserves mathematical transparency is welcome.
-Pull requests that explore new ideas are appreciated.
+- teaching  
+- visualization  
+- transparency  
+- falsifiability  
+- step-by-step understanding  
 
-⸻
+It is *not* optimized for performance — by design.
 
-Scientific falsifiability
+---
+
+## 2. Advanced Go implementation  
+### MCG — Multiplicative Coverage Generator  
+Located in:
+
+```
+/advanced/mcg.go
+```
+
+The MCG is a **full structural generator** of the theory:
+
+- unbounded prime generation  
+- segmented number space  
+- deterministic global multiplicative coverage state  
+- no sieving, no modulus, no trial division  
+- high performance despite zero divisibility checks  
+- faithful expression of the mathematical architecture  
+
+### Key properties
+
+- **Unbounded:**  
+  Generates primes indefinitely without restarting.
+
+- **Segmented growth:**  
+  Processes the number space in fixed-size segments  
+  (default: 1,000,000 integers per segment).
+
+- **Generative dynamics:**  
+  Each new segment is determined by the multiplicative waves  
+  of all previously discovered primes.
+
+- **Fast:**  
+  On a standard machine, the MCG produces  
+  **10,000 primes in under one second**  
+  — without performing a single divisibility test.
+
+- **Scientifically reproducible:**  
+  The algorithm is a direct operationalization of the theory  
+  from the accompanying research paper.
+
+### Run the MCG
+
+```bash
+go run advanced/mcg.go
+```
+
+This prints the first 10,000 primes using the unbounded constructive generator.
+
+---
+
+# Repository structure
+
+(See README for tree)
+
+---
+
+# Scientific falsifiability
 
 The model is incorrect if any of the following occur:
 
-Failure	Meaning
-- A composite is marked prime -> Model is wrong
-- A prime is missed	Model -> is wrong
-- Growth diverges from π(n) at scale -> Model is incomplete
-- No Riemann-oscillation behaviour appears -> Model is incomplete
+| Failure | Meaning |
+|---------|---------|
+| A composite is marked prime | Model is wrong |
+| A prime is missed | Model is wrong |
+| Growth diverges significantly from π(n) | Model is incomplete |
+| No Riemann-oscillation behaviour appears | Model is incomplete |
 
 The project is valuable only because it can be disproven.
 
-⸻
+---
 
-Research paper
+# Research paper
 
-Full, formal version:
-
-The Irreducible Structure of the Prime Distribution
-https://zenodo.org/records/17649211
-
-License for the theoretical paper: CC BY-NC-ND 4.0
-
-Available both online and in this repository at:
-/theory/The_Irreducible_Structure_of_the_Prime_Distribution.pdf
-
-⸻
-
-Why this matters
-
-This is not:
-	•	a faster sieve
-	•	a new primality test
-	•	a cryptographic trick
-	•	a probabilistic guess
-
-It is a constructive explanation of why primes exist and how they are distributed — not as anomalies, but as structural consequences of growth.
-
-This is the point of the project name:
-not primes for mathematicians
-not primes for experts
-primes for everybody
-
-⸻
-
-Contact & contributions
-
-Discussions and critique are welcome — especially mathematical critique.
-
-To contribute:
-	•	open an Issue,
-	•	start a Discussion,
-	•	or submit a Pull Request.
-
-⸻
-
-⭐ If this repository helped you
-	•	leave a ⭐ (improves discoverability)
-	•	cite the Zenodo DOI if used in research
-	•	fork if you build on the idea
-
-Open science moves faster when shared.
-
-⸻
-
-License
-
-MIT — maximum openness for research and education.
+**The Irreducible Structure of the Prime Distribution**  
+Zenodo: https://zenodo.org/records/17649211  
+License: CC BY-NC-ND 4.0
 
 ---
 
-## How to run
+# Why this matters
 
-```bash
-pip install -r requirements.txt
-python p4e.py
+This is not:
 
-Output:
-	•	full number growth
-	•	multiplicative coverage waves
-	•	prime detection — without sieving and without division
+- a new sieve  
+- a primality test  
+- a cryptographic trick  
+- a probabilistic guess  
 
-⸻
+It is a **constructive explanation** of why primes exist and  
+how they are distributed — not as anomalies, but as natural consequences of growth.
 
-Visualization (optional)
+**Primes for everybody.**
 
-python visualize.py
+---
 
-Produces plots for:
-	•	growth density vs. interference
-	•	prime gap damping
-	•	Riemann-like oscillations from the growth model
+# License
+
+**MIT License** — maximum openness for research and education.
