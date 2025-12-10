@@ -44,7 +44,7 @@ Each row represents a prime **emitter** (multiplicative coverage).
 Each column represents the **additive growth** of the number space.  
 Black gaps between coverage waves correspond exactly to the primes.
 
-(See multiplicative_reconstruction_waves.png)
+![Multiplicative reconstruction waves](docs/multiplicative_reconstruction_waves.png)
 
 ---
 
